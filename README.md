@@ -36,7 +36,7 @@ O usuário deve poder:
 - Excluir produtos (DELETE)
 
 Mas só o usuário ADMIN pode:
-- Editar status do produto
+- Excluir o produto
 
 ### ↘️ Fluxo do sistema
 
@@ -44,17 +44,28 @@ Mas só o usuário ADMIN pode:
 2. Tela de Login
 3. Tela de Produtos contendo:
 
-   - Uma tabela listando os produtos
+- Um Tab com as opções "Tabela" e "Prateleira"
 
-   - Botão "Novo Produto"
+  - Na opção de tabela deve conter:
 
-   - Botão "Editar" em cada linha da tabela
+    - Uma tabela listando os produtos
 
-   - Botão "Excluir" em cada linha da tabela
+    - Botão "Editar" em cada linha da tabela
 
-   - Botão toggle em cada linha da tabela que ativa ou desativa o status do produto (vísivel apenas para o ADMIN)
+    - Botão "Excluir" em cada linha da tabela (Visível apenas para o ADMIN)
 
-   - Todas as operações de CRUD devem atualizar a tabela em tempo real
+    - Botão toggle em cada linha da tabela que ativa ou desativa o status do produto (vísivel apenas para o ADMIN)
+
+  - Na opção de prateleira deve conter:
+
+    - Duas áreas, uma identificada como produtos ativos e a outra como produtos inativos, onde conterá todos os produtos representados por suas imagens. O Administrador poderá clicar e arrastar o produto de uma área para a outra, mudando assim, seu status ao mudar de área. O usuário tenant não tem essa ação.
+
+    - Ao clicar com o botão direito em cima do produto, abrir um contextMenu com as opções de excluir (Visível apenas para o ADMIN) e editar.
+
+  - Na tela em geral:
+    - Botão "Novo Produto"
+
+- Todas as operações de CRUD devem atualizar a tabela em tempo real
 
 ---
 
@@ -136,7 +147,7 @@ Estrutura de exemplo (db.json)
 
 - Axios para comunicação com a API
 
-- PrimeVue para UI (DataTable, Dialog, InputText, Button, Toast)
+- PrimeVue para UI (DataTable, Dialog, InputText, Button, Toast, Tab)
 
 - JSON server
 
